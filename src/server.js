@@ -12,10 +12,7 @@ server.on("connection", (ws) => {
     } catch (err) {
       return;
     }
-    if (file.size > 100 * 1024 * 1024) {
-        alert("100MB dan katta fayl yuborib bo'lmaydi.");
-        return;
-        }       
+  
     if (msg.type === "register") {
       if (usernames.has(msg.username)) {
         ws.send(JSON.stringify({ type: "reject", reason: "Ism band" }));
