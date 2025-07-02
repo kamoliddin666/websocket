@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#app {
+  width: 510px;
+  height: 750px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #0088cc;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+#chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f9f9f9;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 75%;
+}
+
+.message .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0088cc;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.message .bubble {
+  background: #e5e5ea;
+  padding: 10px 14px;
+  border-radius: 15px;
+  word-break: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message.me {
+  align-self: flex-end;
+  padding: 10px 14px;
+  border-radius: 15px;
+  max-width: 75%;
+  word-break: break-word;
+}
+
+.message.system {
+  background: transparent;
+  color: #777;
+  text-align: center;
+  font-style: italic;
+  align-self: center;
+}
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  gap: 5px;
+}
+
+#message {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+#send, #record {
+  background: #0088cc;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#send {
+  font-size: 16px;
+}
+
+#typing {
+  padding: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  display: none;
+}
+
+#schedule-time {
+  width: 140px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Media content preview styles */
+.message img,
+.message video,
+.message audio {
+  max-width: 240px;
+  border-radius: 10px;
+  margin-top: 4px;
+  display: block;
+}
+
+.message video {
+  cursor: pointer;
+}
+
+.message audio {
+  width: 100%;
+  outline: none;
+}
+
+/* File type icon previews */
+.message .file-icon {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+/* Scheduled message time preview */
+.message .scheduled-time {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+  display: block;
+}
